@@ -18,6 +18,7 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
+        buildConfigField("String", "API_KEY", getLocalProperty("api_key"))
     }
 
     buildTypes {
@@ -37,6 +38,7 @@ android {
         jvmTarget = "17"
     }
     buildFeatures {
+        buildConfig = true
         compose = true
     }
     composeOptions {
@@ -47,6 +49,10 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
+}
+
+fun getLocalProperty(property: String): String {
+    return com.android.build.gradle.internal.cxx.configure.gradleLocalProperties(rootDir).getProperty(property)
 }
 
 dependencies {
