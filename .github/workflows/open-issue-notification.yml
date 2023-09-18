@@ -6,6 +6,32 @@ on:
 
 jobs:
   create-issue:
+    env: 
+      embeds: |
+        {
+          "embeds": [{
+            "fields": [
+              {
+                "name": "Cat",
+                "value": "Hi! :wave:",
+                "inline": true
+              },
+              {
+                "name": "Dog",
+                "value": "hello!",
+                "inline": true
+              },
+              {
+                "name": "Cat",
+                "value": "wanna play? join to voice channel!"
+              },
+              {
+                "name": "Dog",
+                "value": "yay"
+              }
+            ]
+          }]
+        }
     name: Discord notification
     runs-on: ubuntu-latest
     steps:
@@ -15,7 +41,7 @@ jobs:
           args: "새로운 이슈가 생성되었습니다."
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
-          DISCORD_USERNAME: ${{ github.event.issue.user.login }}
+          DISCORD_USERNAME: WAPP_BOT
           DISCORD_AVATAR: https://github.com/pknu-wap/WAPP/blob/main/image/icon.png?raw=true
-          # DISCORD_EMBEDS: ${{ toJson('{ "embeds": [{"title": "Hello!","description": "Hi! :grinning:"}] }') }}
+          DISCORD_EMBEDS: ${{ toJson(embeds) }}
           
