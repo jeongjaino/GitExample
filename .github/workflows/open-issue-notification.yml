@@ -24,23 +24,23 @@ jobs:
           DISCORD_EMBEDS: |
             '{ 
               "embeds": [
-                  { 
-                    "title": "${{ github.event.issue.title }}",
-                    "description": "${{ github.event.issue.html_url }}"
-                  },
-                  {
-                    "fields": [
-                      {
-                        "name": "Issue Number",
-                        "value": "#${{ github.event.issue.number }}",
-                        "inline": true
-                      },
-                      {
-                        "name": "Author",
-                        "value": "${{ github.event.issue.user.login }}",
-                        "inline": true
-                      }
-                    ]
-                  }
-                ]
-              }'
+                { 
+                  "title": "${{ github.event.issue.title }}",
+                  "description": "${{ github.event.issue.html_url }}"
+                },
+                {
+                  "fields": [
+                    {
+                      "name": "Issue Number",
+                      "value": "#${{ github.event.issue.number }}",
+                      "inline": true
+                    },
+                    {
+                      "name": "Author",
+                      "value": "${{ github.event.issue.user.login }}",
+                      "inline": true
+                    }
+                  ]
+                }
+              ]
+            }'
