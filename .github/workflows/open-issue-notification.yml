@@ -22,8 +22,7 @@ jobs:
           DISCORD_USERNAME: WAPP_BOT
           DISCORD_AVATAR: https://github.com/pknu-wap/WAPP/blob/main/image/icon.png?raw=true
           DISCORD_EMBEDS: |
-            '{ 
-              "embeds": [
+            '[
                 { 
                   "title": "${{ github.event.issue.title }}",
                   "description": "${{ github.event.issue.html_url }}"
@@ -42,5 +41,5 @@ jobs:
                     }
                   ]
                 }
-              ]
-            }'
+              ]'
+              
