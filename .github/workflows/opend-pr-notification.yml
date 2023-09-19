@@ -38,7 +38,7 @@ jobs:
                       "value": "${{ github.head_ref }}",
                       "inline": true
                     },
-                      {
+                    {
                       "name": "PR Number",
                       "value": "#${{ github.event.pull_request.number }}",
                     },
