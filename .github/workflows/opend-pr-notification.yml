@@ -15,7 +15,7 @@ jobs:
       - name: Send Issue
         uses: Ilshidur/action-discord@0.3.2
         with:
-          args: "🥳왔어요 왔어~ 새로운 이슈가 왔어요~🥳"
+          args: "똑똑똑 새로운 피알 요청이 왔어요!🥳"
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
           DISCORD_USERNAME: WAPP_BOT
