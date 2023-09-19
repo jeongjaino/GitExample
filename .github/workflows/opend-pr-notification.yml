@@ -41,7 +41,6 @@ jobs:
                       {
                       "name": "PR Number",
                       "value": "#${{ github.event.pull_request.number }}",
-                      "inline": true
                     },
                     {
                       "name": "Author",
