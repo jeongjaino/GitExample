@@ -22,3 +22,5 @@ jobs:
         issuetype: Task
         summary: '${{ github.event.issue.title }}'
         description: '${{ github.event.issue.body }}'
+        fields: '{"url": "github.event.issue.html_url"}'
+
