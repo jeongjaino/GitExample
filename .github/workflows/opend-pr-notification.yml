@@ -37,7 +37,7 @@ jobs:
                       "value": "${{ github.head_ref }}",
                       "inline": true
                     }
-                  ]
+                  ],
                   "fields": [
                     {
                       "name": "PR Number",
