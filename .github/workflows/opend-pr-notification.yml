@@ -25,28 +25,16 @@ jobs:
                 { 
                   "title": "${{ github.event.pull_request.title }}",
                   "color": 10478271,
-                  "description": "${{ github.event.issue.html_url }}",
+                  "description": "${{ github.event.pull_request.html_url }}",
                   "fields": [
                     {
                       "name": "Base Branch",
-                      "value": "#${{ github.base_ref }}",
+                      "value": "${{ github.base_ref }}",
                       "inline": true
                     },
                     {
                       "name": "Compare Branch",
                       "value": "${{ github.head_ref }}",
-                      "inline": true
-                    }
-                  ],
-                  "fields": [
-                    {
-                      "name": "PR Number",
-                      "value": "#${{ github.event.pull_request.number }}",
-                      "inline": true
-                    },
-                    {
-                      "name": "Author",
-                      "value": "${{ github.event.pull_request.user.login }}",
                       "inline": true
                     }
                   ]
