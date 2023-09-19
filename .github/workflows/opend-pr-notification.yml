@@ -37,6 +37,16 @@ jobs:
                       "name": "Compare Branch",
                       "value": "${{ github.head_ref }}",
                       "inline": true
+                    },
+                      {
+                      "name": "PR Number",
+                      "value": "#${{ github.event.pull_request.number }}",
+                      "inline": true
+                    },
+                    {
+                      "name": "Author",
+                      "value": "${{ github.event.pull_request.user.login }}",
+                      "inline": true
                     }
                   ]
                 }
