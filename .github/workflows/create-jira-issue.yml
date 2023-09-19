@@ -21,5 +21,5 @@ jobs:
         project: WAPP
         issuetype: Task
         summary: '${{ github.event.issue.title }}'
-        description: '${{ github.event.issue.body }}\n${{ github.event.issue.html_url }}'
+        description: '${{ github.event.issue.body }}'
         
