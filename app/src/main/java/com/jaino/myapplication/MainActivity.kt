@@ -24,6 +24,7 @@ class MainActivity : ComponentActivity() {
                 ) {
                     Greeting(BuildConfig.API_KEY)
                 }
+                ///lint
             }
         }
     }
