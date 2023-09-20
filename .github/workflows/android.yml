@@ -15,8 +15,6 @@ jobs:
       - name: Send closed PR notification
         if: github.event.pull_request.merged != true
         uses: Ilshidur/action-discord@0.3.2
-        with:
-          args: "PR C.L.O.S.E.D ❌"
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
           DISCORD_USERNAME: WAPP_BOT
@@ -29,7 +27,7 @@ jobs:
                   "url": "https://github.com/pknu-wap/WAPP/blob/main/image/icon.png?raw=true",
                   "icon_url": "${{ github.event.pull_request.user.avatar_url }}"
                 },
-                "title": "#${{ github.event.pull_request.number }} : ${{ github.event.pull_request.title }}",
+                "title": "PR 닫힘 ❌ \n #${{ github.event.pull_request.number }} : ${{ github.event.pull_request.title }}",
                 "color": 13458524,
                 "description": "${{ github.event.pull_request.html_url }}",
                 "fields": [
@@ -49,8 +47,6 @@ jobs:
       - name: Send merged PR notification
         if: github.event.pull_request.merged == true
         uses: Ilshidur/action-discord@0.3.2
-        with:
-          args: "PR M.E.R.G.E 👏"
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
           DISCORD_USERNAME: WAPP_BOT
@@ -63,7 +59,7 @@ jobs:
                   "url": "https://github.com/pknu-wap/WAPP/blob/main/image/icon.png?raw=true",
                   "icon_url": "${{ github.event.pull_request.user.avatar_url }}"
                 },
-                "title": "#${{ github.event.pull_request.number }} : ${{ github.event.pull_request.title }}",
+                "title": "PR M.E.R.G.E 👏 \n #${{ github.event.pull_request.number }} : ${{ github.event.pull_request.title }}",
                 "color": 10478271,
                 "description": "${{ github.event.pull_request.html_url }}",
                 "fields": [
