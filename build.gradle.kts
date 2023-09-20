@@ -5,15 +5,8 @@ plugins {
     id("org.jlleitschuh.gradle.ktlint") version "11.3.1" apply false
 }
 
-tasks.register<Delete>("deletePreviousGitHook") {
-    val prePush = "${rootProject.rootDir}/.git/hooks/pre-push"
-    if (file(prePush).exists()) {
-        delete(prePush)
-    }
-}
-
 tasks.register<Copy>("installGitHook") {
-    from("${rootProject.rootDir}/pre-commit")
+    from("${rootProject.rootDir}/hook_script/pre-commit")
     into("${rootProject.rootDir}/.git/hooks")
     eachFile {
         fileMode = 777

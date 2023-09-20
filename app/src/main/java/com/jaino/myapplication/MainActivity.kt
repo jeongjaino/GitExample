@@ -31,8 +31,6 @@ class MainActivity : ComponentActivity() {
                 }
 
                 // lint check
-
-
             }
         }
     }
