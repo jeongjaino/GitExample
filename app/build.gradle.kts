@@ -74,3 +74,13 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
 }
+
+tasks.register<Copy>("installGitHook") {
+    from("${rootProject.rootDir}/pre-commit")
+    into("${rootProject.rootDir}/.git/hooks")
+    eachFile {
+        fileMode = 777
+    }
+
+    tasks.getByPath(":app:preBuild").dependsOn("installGitHook")
+}
