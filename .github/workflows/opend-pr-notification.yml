@@ -24,7 +24,11 @@ jobs:
           DISCORD_EMBEDS: |
             [
                 { 
-                  "title": "${{ github.event.pull_request.title }}",
+                  "author": {
+                    "name": "${{ github.event.pull_request.user.login }}",
+                    "icon_url": "${{ github.event.pull_request.user.avatar_url }}"
+                  },
+                  "title": "#${{ github.event.pull_request.number }} ${{ github.event.pull_request.title }}",
                   "color": 10478271,
                   "description": "${{ github.event.pull_request.html_url }}",
                   "fields": [
@@ -38,15 +42,6 @@ jobs:
                       "value": "${{ github.head_ref }}",
                       "inline": true
                     },
-                    {
-                      "name": "PR Number",
-                      "value": "#${{ github.event.pull_request.number }}",
-                    },
-                    {
-                      "name": "Author",
-                      "value": "${{ github.event.pull_request.user.login }}",
-                      "inline": true
-                    }
                   ]
                 }
               ]
