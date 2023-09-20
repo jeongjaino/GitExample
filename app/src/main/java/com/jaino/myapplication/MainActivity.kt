@@ -23,14 +23,7 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colorScheme.background
                 ) {
                     Greeting(BuildConfig.API_KEY)
-
-
-
-
-
                 }
-
-                //lint check
             }
         }
     }
