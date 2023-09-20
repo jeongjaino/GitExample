@@ -30,7 +30,7 @@ class MainActivity : ComponentActivity() {
 
                 }
 
-                //lint check
+                //lint check m
             }
         }
     }
