@@ -4,3 +4,13 @@ plugins {
     id("org.jetbrains.kotlin.android") version "1.9.10" apply false
     id("org.jlleitschuh.gradle.ktlint") version "11.3.1" apply false
 }
+
+tasks.register<Copy>("installGitHook") {
+    from("${rootProject.rootDir}/hook_script/pre-commit")
+    into("${rootProject.rootDir}/.git/hooks")
+    eachFile {
+        fileMode = 777
+    }
+
+    tasks.getByPath(":app:preBuild").dependsOn("installGitHook")
+}
