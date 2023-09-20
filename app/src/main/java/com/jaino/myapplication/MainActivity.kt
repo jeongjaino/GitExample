@@ -23,6 +23,7 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colorScheme.background
                 ) {
                     Greeting(BuildConfig.API_KEY)
+                    고의적 오류 발생
                 }
             }
         }
