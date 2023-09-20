@@ -87,7 +87,7 @@ jobs:
                   "icon_url": "${{ github.event.pull_request.user.avatar_url }}"
                 },
                 "title": "#${{ github.event.pull_request.number }} : ${{ github.event.pull_request.title }}",
-                "color": 10478271,
+                "color": 13458524,
                 "description": "${{ github.event.pull_request.html_url }}",
                 "fields": [
                   {
